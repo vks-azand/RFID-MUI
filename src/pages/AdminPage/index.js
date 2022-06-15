@@ -12,6 +12,8 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 
+import WorkCenterSelection from "../../components/MenuItem";
+
 const MainBox = styled(Box)`
   width: 100vw;
   height: 100vh;
@@ -60,15 +62,48 @@ function Admin() {
         >
           <Typography variant="h5">Administrator</Typography>
 
-          <Button>Select Work Center</Button>
+          <WorkCenterSelection />
 
-          <Button variant="contained">Create / Edit Work Orders </Button>
-          <Button variant="contained">
+          <Button
+            style={{
+              backgroundColor: "#FFFFFF",
+              padding: "8px 10px",
+              fontSize: "13px",
+            }}
+            variant="contained"
+          >
+            Create / Edit Work Orders{" "}
+          </Button>
+          <Button
+            style={{
+              backgroundColor: "#FFFFFF",
+              padding: "8px 10px",
+              fontSize: "13px",
+            }}
+            variant="contained"
+          >
             Associate an RFID to a Work Order{" "}
           </Button>
 
-          <Button variant="contained">Save</Button>
-          <Button variant="contained">Cancel</Button>
+          <Button
+            style={{
+              backgroundColor: "#FFFFFF",
+              fontSize: "13px",
+            }}
+            variant="contained"
+          >
+            Cancel
+          </Button>
+          <Button
+            style={{
+              backgroundColor: "#1B90FA",
+            }}
+            variant="contained"
+          >
+            <Typography color={"#FFFFFF"} fontSize="13px">
+              Save
+            </Typography>
+          </Button>
         </Box>
       </LoginContainer>
     </MainBox>
