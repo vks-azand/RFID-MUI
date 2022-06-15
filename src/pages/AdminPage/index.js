@@ -1,9 +1,16 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
-import { Box, Container, Typography, TextField } from "@mui/material";
+import { Box, Container, Typography, TextField, Button } from "@mui/material";
 import Header from "../../components/Header";
 import { AddBox } from "@mui/icons-material";
 import RFIDPicture from "../../assets/images/rfidpicture.jpg";
+import Header2 from "../../components/Header2";
+
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import MenuItem from "@mui/material/MenuItem";
+import Menu from "@mui/material/Menu";
 
 const MainBox = styled(Box)`
   width: 100vw;
@@ -23,10 +30,10 @@ const LoginContainer = styled(Box)`
 
 const Image = styled("img")``;
 
-function Login() {
+function Admin() {
   return (
     <MainBox>
-      <Header />
+      <Header2 />
       <LoginContainer
         sx={{
           background: `transparent url(${RFIDPicture})  0% 0% no-repeat padding-box`,
@@ -51,23 +58,21 @@ function Login() {
             right: 0,
           }}
         >
-          <Typography variant="h5">Scan Your RFID</Typography>
-          <Typography variant="inherit" sx={{ mt: 5, mb: 1 }}>
-            Work Center
-          </Typography>
-          <TextField label="Fabs" size="small" fullWidth />
-          <Typography fontSize={"13px"} sx={{ mt: 1 }}>
-            To select a differenet Work Center you must first login as
-            administrator.
-          </Typography>
-          <Typography variant="inherit" sx={{ mt: 3, mb: 1 }}>
-            Scan your RFID
-          </Typography>
-          <TextField label="Password" type="password" size="small" fullWidth />
+          <Typography variant="h5">Administrator</Typography>
+
+          <Button>Select Work Center</Button>
+
+          <Button variant="contained">Create / Edit Work Orders </Button>
+          <Button variant="contained">
+            Associate an RFID to a Work Order{" "}
+          </Button>
+
+          <Button variant="contained">Save</Button>
+          <Button variant="contained">Cancel</Button>
         </Box>
       </LoginContainer>
     </MainBox>
   );
 }
 
-export default Login;
+export default Admin;

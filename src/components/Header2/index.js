@@ -18,7 +18,7 @@ const AdminButton = styled(Button)`
   text-transform: none;
 `;
 
-function Header() {
+function Header2() {
   return (
     <AppBar position="absolute" sx={{ background: "#303030" }}>
       <Toolbar disableGutters>
@@ -36,7 +36,7 @@ function Header() {
           </Box>
           <Box>
             <AdminButton color="primary" variant="contained">
-              <Typography variant="caption"> Admin Page</Typography>
+              <Typography variant="caption"> RFID Scan</Typography>
             </AdminButton>
             <StyledButton size="small" variant="text" startIcon={<Language />}>
               En
@@ -48,4 +48,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Header2;

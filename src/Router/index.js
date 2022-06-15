@@ -2,6 +2,7 @@ import React from "react";
 import { ThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline } from "@mui/material";
 import Login from "../pages/Login";
+import Admin from "../pages/AdminPage";
 import { Routes, Route } from "react-router-dom";
 
 function Router() {
@@ -15,6 +16,9 @@ function Router() {
       <CssBaseline />
       <Routes>
         <Route exact path="/" element={<Login />} />
+      </Routes>
+      <Routes>
+        <Route exact path="/adminpage" element={<Admin />} />
       </Routes>
     </ThemeProvider>
   );
