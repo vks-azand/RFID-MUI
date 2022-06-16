@@ -57,7 +57,7 @@ function RFIDscan() {
           <Typography variant="inherit" sx={{ mt: 5, mb: 1 }}>
             Work Center
           </Typography>
-          <Button variant="outlined" sx={{ width: "100%" }}>
+          <Button variant="outlined" sx={{ width: "100%" }} color="inherit">
             Fabs
           </Button>
           <Typography fontSize={"13px"} sx={{ mt: 1 }}>
@@ -68,7 +68,9 @@ function RFIDscan() {
             Scan your RFID
           </Typography>
           <RFIDscanButton variant="contained" color="inherit">
-            ***********
+            <Typography fontSize={"20px"} color="GrayText">
+              ***********************
+            </Typography>
           </RFIDscanButton>
         </Box>
       </RFIDscanBox>

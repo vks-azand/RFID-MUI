@@ -14,7 +14,6 @@ import {
 import Header from "../../components/Header";
 import { AddBox } from "@mui/icons-material";
 import Admin from "../../assets/images/Admin.png";
-import options from "../AdminPage";
 
 const MainBox = styled(Box)`
   width: 100vw;
@@ -32,6 +31,12 @@ const AdminBox = styled(Box)`
   border: 3px solid #1f8ac9;
 `;
 
+const RFIDscanButton = styled(Button)`
+  width: 100%;
+  color: black;
+  border-radius: 0 !important;
+  height: 58px;
+`;
 const Image = styled("img")``;
 
 const StyledSelect = styled(Select)(({ theme }) => ({
@@ -53,7 +58,7 @@ const StyledButton = styled(Button)`
   text-transform: none;
 `;
 
-function AdminPage() {
+function WOAssociate() {
   // const [showPlaceholder, setShowplaceholder] = useState(value === "None");
   const [works, setWorks] = useState("");
   const handleChange = e => {
@@ -82,7 +87,17 @@ function AdminPage() {
           }}
         >
           <Typography variant="h5">Administrator</Typography>
-
+          <Typography fontSize={"13px"} color="GrayText">
+            RFID Work Order Number Association
+          </Typography>
+          <Typography variant="inherit" sx={{ mt: 3, mb: 1 }}>
+            Scan your RFID
+          </Typography>
+          <RFIDscanButton variant="contained" color="inherit">
+            <Typography fontSize={"20px"} color="GrayText">
+              ***********************
+            </Typography>
+          </RFIDscanButton>
           <FormControl fullWidth sx={{ mt: 2 }}>
             <StyledSelect
               value={works}
@@ -91,47 +106,17 @@ function AdminPage() {
               displayEmpty
             >
               <MenuItem value={""} disabled>
-                Select Work Center
+                Select Work Order number
               </MenuItem>
-              {/* Example Work Centers */}
-              <MenuItem value={10}>Fabs</MenuItem>
-              <MenuItem value={20}>Welding</MenuItem>
-              <MenuItem value={30}>Paint</MenuItem>
-              <MenuItem value={40}>Assembly</MenuItem>
+
+              {/* Example Work order numbers: */}
+              <MenuItem value={10}>12345</MenuItem>
+              <MenuItem value={20}>23456</MenuItem>
+              <MenuItem value={30}>34567</MenuItem>
+              <MenuItem value={40}>45678</MenuItem>
             </StyledSelect>
           </FormControl>
-          <FormControl fullWidth sx={{ mt: 3 }}>
-            <Button
-              color="inherit"
-              sx={{
-                background: "#FFFFFF",
-                color: "black",
-                "&.MuiButtonBase-root:hover": {
-                  background: "white",
-                },
-              }}
-            >
-              <Typography variant="body1" sx={{ textTransform: "initial" }}>
-                Create / Edit Work Orders
-              </Typography>
-            </Button>
-          </FormControl>
-          <FormControl fullWidth sx={{ mt: 3 }}>
-            <Button
-              color="inherit"
-              sx={{
-                background: "#FFFFFF",
-                color: "black",
-                "&.MuiButtonBase-root:hover": {
-                  background: "white",
-                },
-              }}
-            >
-              <Typography variant="body1" sx={{ textTransform: "initial" }}>
-                Associate an RFID to a Work Order
-              </Typography>
-            </Button>
-          </FormControl>
+
           <FormControl fullWidth sx={{ mt: 3 }}>
             <Box
               sx={{
@@ -164,4 +149,4 @@ function AdminPage() {
   );
 }
 
-export default AdminPage;
+export default WOAssociate;
