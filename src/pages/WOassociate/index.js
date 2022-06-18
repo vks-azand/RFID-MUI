@@ -11,7 +11,7 @@ import {
   MenuItem,
   InputLabel,
 } from "@mui/material";
-import Header from "../../components/Header";
+import Header2 from "../../components/Header2";
 import { AddBox } from "@mui/icons-material";
 import Admin from "../../assets/images/Admin.png";
 
@@ -67,7 +67,7 @@ function WOAssociate() {
 
   return (
     <MainBox>
-      <Header />
+      <Header2 />
       <AdminBox sx={{ display: "flex" }}>
         {/* // background: `transparent url(${RFIDPicture})  0% 0% no-repeat padding-box`, */}
         <Box
@@ -106,7 +106,10 @@ function WOAssociate() {
               displayEmpty
             >
               <MenuItem value={""} disabled>
-                Select Work Order number
+                <Typography color={"GrayText"}>
+                  {" "}
+                  Select Work Order number{" "}
+                </Typography>
               </MenuItem>
 
               {/* Example Work order numbers: */}

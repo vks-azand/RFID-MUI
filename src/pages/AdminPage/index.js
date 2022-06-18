@@ -11,7 +11,7 @@ import {
   MenuItem,
   InputLabel,
 } from "@mui/material";
-import Header from "../../components/Header";
+import Header2 from "../../components/Header2";
 import { AddBox } from "@mui/icons-material";
 import Admin from "../../assets/images/Admin.png";
 import options from "../AdminPage";
@@ -62,7 +62,7 @@ function AdminPage() {
 
   return (
     <MainBox>
-      <Header />
+      <Header2 />
       <AdminBox sx={{ display: "flex" }}>
         {/* // background: `transparent url(${RFIDPicture})  0% 0% no-repeat padding-box`, */}
         <Box
@@ -91,7 +91,7 @@ function AdminPage() {
               displayEmpty
             >
               <MenuItem value={""} disabled>
-                Select Work Center
+                <Typography color={"GrayText"}>Select Work Center</Typography>
               </MenuItem>
               {/* Example Work Centers */}
               <MenuItem value={10}>Fabs</MenuItem>
@@ -106,6 +106,7 @@ function AdminPage() {
               sx={{
                 background: "#FFFFFF",
                 color: "black",
+                justifyContent: "left",
                 "&.MuiButtonBase-root:hover": {
                   background: "white",
                 },

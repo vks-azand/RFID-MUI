@@ -5,6 +5,7 @@ import RFIDscan from "../pages/RFIDscan";
 import Admin from "../pages/AdminPage";
 import { Routes, Route } from "react-router-dom";
 import WOAssociate from "../pages/WOassociate";
+import Login from "../pages/Login";
 
 function Router() {
   const myTheme = createTheme({
@@ -17,6 +18,9 @@ function Router() {
       <CssBaseline />
       <Routes>
         <Route exact path="/" element={<RFIDscan />} />
+      </Routes>
+      <Routes>
+        <Route exact path="/login" element={<Login />} />
       </Routes>
       <Routes>
         <Route exact path="/adminpage" element={<Admin />} />
