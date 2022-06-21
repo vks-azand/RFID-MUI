@@ -3,6 +3,7 @@ import React from "react";
 import { Language } from "@mui/icons-material";
 import LogoIcon from "../../assets/logos/Logo.svg";
 import { styled } from "@mui/material/styles";
+import { Link } from "react-router-dom";
 
 const StyledButton = styled(Button)`
   color: #919191;
@@ -35,9 +36,11 @@ function Header2() {
             <img src={LogoIcon} alt="logo" />
           </Box>
           <Box>
-            <AdminButton color="primary" variant="contained">
-              <Typography variant="caption"> RFID Scan</Typography>
-            </AdminButton>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <AdminButton color="primary" variant="contained">
+                <Typography variant="caption"> RFID Scan</Typography>
+              </AdminButton>
+            </Link>
             <StyledButton size="small" variant="text" startIcon={<Language />}>
               En
             </StyledButton>
