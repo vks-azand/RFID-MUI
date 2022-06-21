@@ -21,7 +21,7 @@ const AdminButton = styled(Button)`
 
 function Header2() {
   return (
-    <AppBar position="absolute" sx={{ background: "#303030" }}>
+    <AppBar sx={{ background: "#303030" }}>
       <Toolbar disableGutters>
         <Box
           sx={{
