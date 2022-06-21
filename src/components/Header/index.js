@@ -4,6 +4,7 @@ import { Language } from "@mui/icons-material";
 import LogoIcon from "../../assets/logos/Logo.svg";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const StyledButton = styled(Button)`
   color: #919191;
@@ -20,6 +21,9 @@ const AdminButton = styled(Button)`
 `;
 
 function Header() {
+  axios.get("http://localhost:8080/backend").then(res => {
+    console.log(res);
+  });
   return (
     <AppBar position="absolute" sx={{ background: "#303030" }}>
       <Toolbar disableGutters>
