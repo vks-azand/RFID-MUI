@@ -152,7 +152,10 @@ function AdminPage() {
                 color="inherit"
                 sx={{ color: "black" }}
               >
-                Cancel
+                {" "}
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  Cancel
+                </Link>
               </StyledButton>
               <StyledButton
                 variant="contained"
