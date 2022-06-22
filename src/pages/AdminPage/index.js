@@ -14,8 +14,8 @@ import {
 import Header2 from "../../components/Header2";
 import { AddBox } from "@mui/icons-material";
 import Admin from "../../assets/images/Admin.png";
-import options from "../AdminPage";
 
+import { Link } from "react-router-dom";
 const MainBox = styled(Box)`
   width: 100vw;
   height: 100vh;
@@ -112,9 +112,11 @@ function AdminPage() {
                 },
               }}
             >
-              <Typography variant="body1" sx={{ textTransform: "initial" }}>
-                Create / Edit Work Orders
-              </Typography>
+              <Link to="/workorders" style={{ textDecoration: "none" }}>
+                <Typography variant="body1" sx={{ textTransform: "initial" }}>
+                  Create / Edit Work Orders
+                </Typography>
+              </Link>
             </Button>
           </FormControl>
           <FormControl fullWidth sx={{ mt: 3 }}>
@@ -128,9 +130,12 @@ function AdminPage() {
                 },
               }}
             >
-              <Typography variant="body1" sx={{ textTransform: "initial" }}>
-                Associate an RFID to a Work Order
-              </Typography>
+              {" "}
+              <Link to="/woassociate" style={{ textDecoration: "none" }}>
+                <Typography variant="body1" sx={{ textTransform: "initial" }}>
+                  Associate an RFID to a Work Order
+                </Typography>
+              </Link>
             </Button>
           </FormControl>
           <FormControl fullWidth sx={{ mt: 3 }}>

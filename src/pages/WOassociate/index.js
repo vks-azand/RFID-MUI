@@ -14,7 +14,7 @@ import {
 import Header2 from "../../components/Header2";
 import { AddBox } from "@mui/icons-material";
 import Admin from "../../assets/images/Admin.png";
-
+import { Link } from "react-router-dom";
 const MainBox = styled(Box)`
   width: 100vw;
   height: 100vh;
@@ -134,7 +134,9 @@ function WOAssociate() {
                 color="inherit"
                 sx={{ color: "black" }}
               >
-                Cancel
+                <Link to="/adminpage" style={{ textDecoration: "none" }}>
+                  Cancel
+                </Link>
               </StyledButton>
               <StyledButton
                 variant="contained"

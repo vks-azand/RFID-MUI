@@ -104,7 +104,9 @@ function Login() {
           aria-label="cancel"
           size="small"
         >
-          <Close sx={{ fontSize: "18px" }} />
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Close sx={{ fontSize: "18px" }} />
+          </Link>
         </IconButton>
         <Typography
           variant="body1"
@@ -154,9 +156,11 @@ function Login() {
         <Link to="" style={{ textDecoration: "none" }}>
           <ForgotPass variant="body1">Forgot your password</ForgotPass>
         </Link>
-        <StyledButton size="large" color="primary">
-          Sign In
-        </StyledButton>
+        <Link to="/adminpage" style={{ textDecoration: "none" }}>
+          <StyledButton size="large" color="primary">
+            Sign In
+          </StyledButton>
+        </Link>
       </LoginPanel>
     </Container>
   );

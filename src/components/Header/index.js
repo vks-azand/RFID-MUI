@@ -39,9 +39,9 @@ function Header() {
     setLang(val);
     setAnchorEl(null);
   };
-  axios.get("http://localhost:8080/backend").then(res => {
-    console.log(res);
-  });
+  // axios.get("http://localhost:8080/backend").then(res => {
+  //   console.log(res);
+  // });
   return (
     <AppBar position="absolute" sx={{ background: "#303030" }}>
       <Toolbar disableGutters>
@@ -58,7 +58,7 @@ function Header() {
             <img src={LogoIcon} alt="logo" />
           </Box>
           <Box>
-            <Link to="/adminpage" style={{ textDecoration: "none" }}>
+            <Link to="/login" style={{ textDecoration: "none" }}>
               <AdminButton color="primary" variant="contained">
                 <Typography variant="caption"> Admin Page</Typography>
               </AdminButton>
