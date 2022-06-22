@@ -17,10 +17,11 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React from "react";
-import Header from "../../components/Header";
+import React, { useState } from "react";
+import Header2 from "../../components/Header2";
 import { styled } from "@mui/material/styles";
 import { Delete, Edit } from "@mui/icons-material";
+import EditOrderDialog from "./EditOrder";
 
 const Container = styled(Box)`
   width: 100vw;
@@ -149,9 +150,17 @@ const rows = [
 ];
 
 function WorkOrders() {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <Container>
-      <Header />
+      <Header2 />
       <Box sx={{ height: "50px", width: "100%" }}>
         <Typography sx={{ color: "#969696", ml: 3, mt: 1 }}>Admin</Typography>
       </Box>
@@ -183,7 +192,9 @@ function WorkOrders() {
             Work Order
           </Typography>
 
-          <StyledButton variant="primary">Add New</StyledButton>
+          <StyledButton variant="primary" onClick={handleOpen}>
+            Add New
+          </StyledButton>
         </Box>
         <Box sx={{ display: "flex" }}>
           <CustomInput placeholder="Search for work number" size="small" />
@@ -208,27 +219,50 @@ function WorkOrders() {
       >
         <Table>
           <TableHead>
-            <StyledTableCell align="left">Work Order Num</StyledTableCell>
-            <StyledTableCell align="left">Location Name</StyledTableCell>
-            <StyledTableCell align="left">Location ID</StyledTableCell>
-            <StyledTableCell align="left">Min. Start Date</StyledTableCell>
-            <StyledTableCell align="left">Max. Start Date</StyledTableCell>
+            <StyledTableCell component={"th"} align="left">
+              Work Order Num
+            </StyledTableCell>
+            <StyledTableCell component={"th"} align="left">
+              Location Name
+            </StyledTableCell>
+            <StyledTableCell component={"th"} align="left">
+              Location ID
+            </StyledTableCell>
+            <StyledTableCell component={"th"} align="left">
+              Min. Start Date
+            </StyledTableCell>
+            <StyledTableCell component={"th"} align="left">
+              Max. Start Date
+            </StyledTableCell>
             <StyledTableCell
+              component={"th"}
               sx={{ width: "300px" }}
               align="right"
             ></StyledTableCell>
           </TableHead>
           <TableBody>
-            {rows.map(row => (
-              <TableRow key={row.Name}>
-                <StyledTableCell component="th" scope="row">
+            {rows.map((row, index) => (
+              <TableRow key={index}>
+                <StyledTableCell component={"td"} scope="row">
                   {row.orderNum}
                 </StyledTableCell>
-                <StyledTableCell align="left"> {row.Name} </StyledTableCell>
-                <StyledTableCell align="left"> {row.ID} </StyledTableCell>
-                <StyledTableCell align="left"> {row.minDate} </StyledTableCell>
-                <StyledTableCell align="left"> {row.maxDate} </StyledTableCell>
-                <StyledTableCell align="right">
+                <StyledTableCell component={"td"} align="left">
+                  {" "}
+                  {row.Name}{" "}
+                </StyledTableCell>
+                <StyledTableCell component={"td"} align="left">
+                  {" "}
+                  {row.ID}{" "}
+                </StyledTableCell>
+                <StyledTableCell component={"td"} align="left">
+                  {" "}
+                  {row.minDate}{" "}
+                </StyledTableCell>
+                <StyledTableCell component={"td"} align="left">
+                  {" "}
+                  {row.maxDate}{" "}
+                </StyledTableCell>
+                <StyledTableCell component={"td"} align="right">
                   <Checkbox
                     color="primary"
                     sx={{
@@ -270,6 +304,7 @@ function WorkOrders() {
           </IconButton>
         </Box>
       </Box>
+      <EditOrderDialog open={open} onClose={handleClose} />
       <Box sx={{ height: "100px" }} />
     </Container>
   );

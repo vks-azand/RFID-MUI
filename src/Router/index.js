@@ -15,24 +15,26 @@ function Router() {
     },
   });
   return (
-    <ThemeProvider theme={myTheme}>
-      <CssBaseline />
-      <Routes>
-        <Route exact path="/" element={<RFIDscan />} />
-      </Routes>
-      <Routes>
-        <Route exact path="/login" element={<Login />} />
-      </Routes>
+    <>
+      <ThemeProvider theme={myTheme}>
+        <CssBaseline />
+        <Routes>
+          <Route exact path="/" element={<RFIDscan />} />
+        </Routes>
+        <Routes>
+          <Route exact path="/login" element={<Login />} />
+        </Routes>
+        <Routes>
+          <Route exact path="/adminpage" element={<Admin />} />
+        </Routes>
+        <Routes>
+          <Route exact path="/woassociate" element={<WOAssociate />} />
+        </Routes>
+      </ThemeProvider>
       <Routes>
         <Route exact path="/workorders" element={<WorkOrders />} />
       </Routes>
-      <Routes>
-        <Route exact path="/adminpage" element={<Admin />} />
-      </Routes>
-      <Routes>
-        <Route exact path="/woassociate" element={<WOAssociate />} />
-      </Routes>
-    </ThemeProvider>
+    </>
   );
 }
 

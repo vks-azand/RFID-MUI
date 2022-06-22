@@ -112,7 +112,7 @@ function AdminPage() {
                 },
               }}
             >
-              <Link to="/workorders" style={{ textDecoration: "none" }}>
+              <Link to="" style={{ textDecoration: "none" }}>
                 <Typography variant="body1" sx={{ textTransform: "initial" }}>
                   Create / Edit Work Orders
                 </Typography>
