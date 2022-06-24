@@ -61,7 +61,7 @@ function RFIDscan() {
             Fabs
           </Button>
           <Typography fontSize={"13px"} sx={{ mt: 1 }}>
-            To select a differenet Work Center you must first login as
+            To select a different Work Center you must first login as
             administrator.
           </Typography>
           <Typography variant="inherit" sx={{ mt: 3, mb: 1 }}>

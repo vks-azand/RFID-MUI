@@ -22,6 +22,8 @@ import Header2 from "../../components/Header2";
 import { styled } from "@mui/material/styles";
 import { Delete, Edit } from "@mui/icons-material";
 import EditOrderDialog from "./EditOrder";
+import DeleteWODialog from "./DeleteWODialog";
+import NewOrderDialog from "./NewOrder";
 
 const Container = styled(Box)`
   width: 100vw;
@@ -68,7 +70,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
     backgroundColor: theme.palette.common.white,
-    color: theme.palette.common.black,
+    color: "gray",
     borderBottom: "none",
   },
 }));
@@ -150,14 +152,31 @@ const rows = [
 ];
 
 function WorkOrders() {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(true);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialog2Open, setDialog2Open] = useState(false);
+  const [popOpen, setPopOpen] = useState(false);
+
+  const handlePopOpen = () => {
+    setPopOpen(true);
+  };
+  const handlePopClose = () => {
+    setPopOpen(false);
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  const handleOpen = () => {
+    setDialogOpen(true);
   };
+  const handleClose = () => {
+    setDialogOpen(false);
+  };
+
+  const handle2Open = () => {
+    setDialog2Open(true);
+  };
+  const handle2Close = () => {
+    setDialog2Open(false);
+  };
+
   return (
     <Container>
       <Header2 />
@@ -191,8 +210,8 @@ function WorkOrders() {
           >
             Work Order
           </Typography>
-
-          <StyledButton variant="primary" onClick={handleOpen}>
+          <NewOrderDialog open={dialog2Open} onClose={handle2Close} />
+          <StyledButton variant="primary" onClick={handle2Open}>
             Add New
           </StyledButton>
         </Box>
@@ -267,8 +286,9 @@ function WorkOrders() {
                     color="primary"
                     sx={{
                       width: "15px",
-                      background: "#ddd",
+                      background: "transparent",
                       height: "15px",
+                      color: "lightgray",
                       "&:hover": {
                         backgroundColor: "#ddd",
                       },
@@ -282,7 +302,7 @@ function WorkOrders() {
         <Box sx={{ position: "absolute", bottom: 5, right: 5 }}>
           <IconButton
             color="primary"
-            disabled
+            onClick={handleOpen}
             sx={{
               "&.MuiButtonBase-root:disabled": {
                 color: "#ddd",
@@ -293,18 +313,19 @@ function WorkOrders() {
           </IconButton>
           <IconButton
             color="primary"
+            onClick={handlePopOpen}
             sx={{
               "&.MuiButtonBase-root:disabled": {
                 color: "#ddd",
               },
             }}
-            disabled
           >
             <Delete />
           </IconButton>
         </Box>
       </Box>
-      <EditOrderDialog open={open} onClose={handleClose} />
+      <EditOrderDialog open={dialogOpen} onClose={handleClose} />
+      <DeleteWODialog open={popOpen} onClose={handlePopClose} />
       <Box sx={{ height: "100px" }} />
     </Container>
   );

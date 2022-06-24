@@ -17,7 +17,6 @@ import { styled } from "@mui/material/styles";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
-import DeleteOPDialog from "./DeleteOPDialog";
 
 const TabHeader = styled(Box)`
   display: flex;
@@ -65,16 +64,7 @@ function a11yProps(index) {
   };
 }
 
-function EditOrderDialog(props) {
-  const [popOpen, setPopOpen] = useState(false);
-
-  const handlePopOpen = () => {
-    setPopOpen(true);
-  };
-  const handlePopClose = () => {
-    setPopOpen(false);
-  };
-
+function NewOrderDialog(props) {
   const { open, onClose } = props;
   const [value, setValue] = useState(0);
 
@@ -137,15 +127,8 @@ function EditOrderDialog(props) {
             <TabHeader>
               <Edit sx={{ mr: 2 }} />
               <Typography variant="h6" sx={{ mr: 2, fontWeight: "bold" }}>
-                Edit Work Order
-              </Typography>
-              <Button
-                sx={{ textTransform: "none" }}
-                variant="contained"
-                color="primary"
-              >
                 New Work Order
-              </Button>
+              </Typography>
             </TabHeader>
             <TabBody>
               <Typography>Work Order Number</Typography>
@@ -251,7 +234,7 @@ function EditOrderDialog(props) {
             <TabHeader>
               <Edit sx={{ mr: 2 }} />
               <Typography variant="h6" sx={{ mr: 2, fontWeight: "bold" }}>
-                Edit Operation
+                Operations
               </Typography>
               <Button
                 sx={{ textTransform: "none" }}
@@ -277,7 +260,6 @@ function EditOrderDialog(props) {
                 </Box>
                 <Box sx={{ mr: 2, display: "flex", alignItems: "end" }}>
                   <Button
-                    onClick={handlePopOpen}
                     color="inherit"
                     variant="contained"
                     size="large"
@@ -287,7 +269,6 @@ function EditOrderDialog(props) {
                       background: "#fff",
                     }}
                   >
-                    <DeleteOPDialog open={popOpen} onClose={handlePopClose} />
                     <Delete />
                   </Button>
                 </Box>
@@ -375,4 +356,4 @@ function EditOrderDialog(props) {
   );
 }
 
-export default EditOrderDialog;
+export default NewOrderDialog;
