@@ -301,7 +301,8 @@ function WorkOrders() {
         </Table>
         <Box sx={{ position: "absolute", bottom: 5, right: 5 }}>
           <IconButton
-            color="primary"
+            mt="3px"
+            color="default"
             onClick={handleOpen}
             sx={{
               "&.MuiButtonBase-root:disabled": {
@@ -312,7 +313,7 @@ function WorkOrders() {
             <Edit />
           </IconButton>
           <IconButton
-            color="primary"
+            color="default"
             onClick={handlePopOpen}
             sx={{
               "&.MuiButtonBase-root:disabled": {

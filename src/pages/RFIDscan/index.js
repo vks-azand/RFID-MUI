@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import { Box, Container, Typography, TextField, Button } from "@mui/material";
 import Header from "../../components/Header";
 import { AddBox } from "@mui/icons-material";
 import RFIDPicture from "../../assets/images/rfidpicture.png";
-import options from "../AdminPage";
+import CantStart from "./CantStartWarning";
 
 const MainBox = styled(Box)`
   width: 100vw;
@@ -32,6 +32,14 @@ const RFIDscanButton = styled(Button)`
 const Image = styled("img")``;
 
 function RFIDscan() {
+  const [popOpen, setPopOpen] = useState(false);
+
+  const handlePopOpen = () => {
+    setPopOpen(true);
+  };
+  const handlePopClose = () => {
+    setPopOpen(false);
+  };
   return (
     <MainBox>
       <Header />
@@ -67,11 +75,16 @@ function RFIDscan() {
           <Typography variant="inherit" sx={{ mt: 3, mb: 1 }}>
             Scan your RFID
           </Typography>
-          <RFIDscanButton variant="contained" color="inherit">
+          <RFIDscanButton
+            variant="contained"
+            color="inherit"
+            onClick={handlePopOpen}
+          >
             <Typography fontSize={"20px"} color="GrayText">
               ***********************
             </Typography>
           </RFIDscanButton>
+          <CantStart open={popOpen} onClose={handlePopClose} />
         </Box>
       </RFIDscanBox>
     </MainBox>

@@ -149,7 +149,12 @@ function EditOrderDialog(props) {
             </TabHeader>
             <TabBody>
               <Typography>Work Order Number</Typography>
-              <TextField sx={{ mt: 1 }} variant="outlined" size="small" />
+              <TextField
+                sx={{ mt: 1 }}
+                variant="outlined"
+                size="small"
+                placeholder="123451"
+              />
               <TabItem>
                 <Box>
                   <Typography>Min. start date</Typography>
@@ -193,6 +198,7 @@ function EditOrderDialog(props) {
                     size="small"
                     type="number"
                     fullWidth
+                    placeholder="1000"
                   />
                 </Box>
               </TabItem>
@@ -204,6 +210,7 @@ function EditOrderDialog(props) {
                     variant="outlined"
                     size="small"
                     fullWidth
+                    placeholder="Montreal, Qc"
                   />
                 </Box>
                 <Box sx={{ width: "45%" }}>
@@ -213,6 +220,7 @@ function EditOrderDialog(props) {
                     variant="outlined"
                     size="small"
                     fullWidth
+                    placeholder="34FG87nm"
                   />
                 </Box>
               </TabItem>
@@ -265,15 +273,30 @@ function EditOrderDialog(props) {
               <Box sx={{ display: "flex" }}>
                 <Box sx={{ mr: 2 }}>
                   <Typography>Operation Num</Typography>
-                  <TextField sx={{ mt: 1 }} size="small" variant="outlined" />
+                  <TextField
+                    sx={{ mt: 1 }}
+                    size="small"
+                    variant="outlined"
+                    placeholder="10"
+                  />
                 </Box>
                 <Box sx={{ mr: 2 }}>
                   <Typography>GuideBook ID</Typography>
-                  <TextField sx={{ mt: 1 }} size="small" variant="outlined" />
+                  <TextField
+                    sx={{ mt: 1 }}
+                    size="small"
+                    variant="outlined"
+                    placeholder="111111"
+                  />
                 </Box>
                 <Box sx={{ mr: 2 }}>
                   <Typography>Work Center</Typography>
-                  <TextField sx={{ mt: 1 }} size="small" variant="outlined" />
+                  <TextField
+                    sx={{ mt: 1 }}
+                    size="small"
+                    variant="outlined"
+                    placeholder="Fabs"
+                  />
                 </Box>
                 <Box sx={{ mr: 2, display: "flex", alignItems: "end" }}>
                   <Button
@@ -296,15 +319,30 @@ function EditOrderDialog(props) {
               <Box sx={{ display: "flex", mt: 1 }}>
                 <Box sx={{ mr: 2 }}>
                   <Typography>Operation Num</Typography>
-                  <TextField sx={{ mt: 1 }} size="small" variant="outlined" />
+                  <TextField
+                    sx={{ mt: 1 }}
+                    size="small"
+                    variant="outlined"
+                    placeholder="20"
+                  />
                 </Box>
                 <Box sx={{ mr: 2 }}>
                   <Typography>GuideBook ID</Typography>
-                  <TextField sx={{ mt: 1 }} size="small" variant="outlined" />
+                  <TextField
+                    sx={{ mt: 1 }}
+                    size="small"
+                    variant="outlined"
+                    placeholder="121212"
+                  />
                 </Box>
                 <Box sx={{ mr: 2 }}>
                   <Typography>Work Center</Typography>
-                  <TextField sx={{ mt: 1 }} size="small" variant="outlined" />
+                  <TextField
+                    sx={{ mt: 1 }}
+                    size="small"
+                    variant="outlined"
+                    placeholder="Welding"
+                  />
                 </Box>
                 <Box sx={{ mr: 2, display: "flex", alignItems: "end" }}>
                   <Button
@@ -325,15 +363,30 @@ function EditOrderDialog(props) {
               <Box sx={{ display: "flex", mt: 1 }}>
                 <Box sx={{ mr: 2 }}>
                   <Typography>Operation Num</Typography>
-                  <TextField sx={{ mt: 1 }} size="small" variant="outlined" />
+                  <TextField
+                    sx={{ mt: 1 }}
+                    size="small"
+                    variant="outlined"
+                    placeholder="30"
+                  />
                 </Box>
                 <Box sx={{ mr: 2 }}>
                   <Typography>GuideBook ID</Typography>
-                  <TextField sx={{ mt: 1 }} size="small" variant="outlined" />
+                  <TextField
+                    sx={{ mt: 1 }}
+                    size="small"
+                    variant="outlined"
+                    placeholder="222222"
+                  />
                 </Box>
                 <Box sx={{ mr: 2 }}>
                   <Typography>Work Center</Typography>
-                  <TextField sx={{ mt: 1 }} size="small" variant="outlined" />
+                  <TextField
+                    sx={{ mt: 1 }}
+                    size="small"
+                    variant="outlined"
+                    placeholder="Paint"
+                  />
                 </Box>
                 <Box sx={{ mr: 2, display: "flex", alignItems: "end" }}>
                   <Button
