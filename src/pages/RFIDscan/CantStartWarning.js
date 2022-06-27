@@ -1,6 +1,6 @@
 import React from "react";
 import { Dialog, DialogContent, Typography, Box, Button } from "@mui/material";
-import { WarningRounded } from "@mui/icons-material";
+import { CloseCircle } from "mdi-material-ui";
 
 function CantStart(props) {
   const { open, onClose } = props;
@@ -9,7 +9,13 @@ function CantStart(props) {
       onClose={onClose}
       open={open}
       maxWidth={"sm"}
-      sx={{ "& .MuiDialog-paper": { width: "35%" } }}
+      sx={{
+        "& .MuiDialog-paper": {
+          width: "35%",
+          color: "black",
+          background: "white",
+        },
+      }}
     >
       <DialogContent>
         <Box
@@ -17,11 +23,11 @@ function CantStart(props) {
             width: "100%",
             display: "flex",
             justifyContent: "center",
-            alignItems: "end",
+            alignItems: "center",
             p: 3,
           }}
         >
-          <WarningRounded color="error" sx={{ fontSize: "2.5rem" }} />
+          <CloseCircle color="error" sx={{ fontSize: "1.7rem" }} />
           <Typography variant="h6" fontWeight={"bold"} sx={{ ml: 1 }}>
             The Operation can not start
           </Typography>
@@ -34,7 +40,7 @@ function CantStart(props) {
             flexDirection: "column",
           }}
         >
-          <Typography>
+          <Typography sx={{ textAlign: "center", width: "85%" }}>
             The next operation does not match the Work Center of this terminal
           </Typography>
         </Box>

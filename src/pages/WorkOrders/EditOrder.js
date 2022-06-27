@@ -18,6 +18,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import DeleteOPDialog from "./DeleteOPDialog";
+import NewOrderDialog from "./NewOrder";
 
 const TabHeader = styled(Box)`
   display: flex;
@@ -92,6 +93,16 @@ function EditOrderDialog(props) {
   const handleMaxDateChange = newValue => {
     setMaxDateVal(newValue);
   };
+
+  const [dialog2Open, setDialog2Open] = useState(false);
+
+  const handle2Open = () => {
+    setDialog2Open(true);
+  };
+  const handle2Close = () => {
+    setDialog2Open(false);
+  };
+
   return (
     <Dialog
       onClose={onClose}
@@ -139,10 +150,12 @@ function EditOrderDialog(props) {
               <Typography variant="h6" sx={{ mr: 2, fontWeight: "bold" }}>
                 Edit Work Order
               </Typography>
+              <NewOrderDialog open={dialog2Open} onClose={handle2Close} />
               <Button
                 sx={{ textTransform: "none" }}
                 variant="contained"
                 color="primary"
+                onClick={handle2Open}
               >
                 New Work Order
               </Button>
@@ -310,7 +323,6 @@ function EditOrderDialog(props) {
                       background: "#fff",
                     }}
                   >
-                    <DeleteOPDialog open={popOpen} onClose={handlePopClose} />
                     <Delete />
                   </Button>
                 </Box>
@@ -422,6 +434,7 @@ function EditOrderDialog(props) {
               </Box>
             </TabBody>
           </TabPanel>
+          <DeleteOPDialog open={popOpen} onClose={handlePopClose} />
         </Box>
       </DialogContent>
     </Dialog>

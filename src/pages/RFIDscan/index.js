@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import { AddBox } from "@mui/icons-material";
 import RFIDPicture from "../../assets/images/rfidpicture.png";
 import CantStart from "./CantStartWarning";
+import NotFound from "./NotFoundWarning";
 
 const MainBox = styled(Box)`
   width: 100vw;
@@ -40,6 +41,16 @@ function RFIDscan() {
   const handlePopClose = () => {
     setPopOpen(false);
   };
+
+  const [pop2Open, setPop2Open] = useState(false);
+
+  const handlePop2Open = () => {
+    setPop2Open(true);
+  };
+  const handlePop2Close = () => {
+    setPop2Open(false);
+  };
+
   return (
     <MainBox>
       <Header />
@@ -65,7 +76,13 @@ function RFIDscan() {
           <Typography variant="inherit" sx={{ mt: 5, mb: 1 }}>
             Work Center
           </Typography>
-          <Button variant="outlined" sx={{ width: "100%" }} color="inherit">
+          <NotFound open={pop2Open} onClose={handlePop2Close} />
+          <Button
+            variant="outlined"
+            sx={{ width: "100%" }}
+            color="inherit"
+            onClick={handlePop2Open}
+          >
             Fabs
           </Button>
           <Typography fontSize={"13px"} sx={{ mt: 1 }}>
