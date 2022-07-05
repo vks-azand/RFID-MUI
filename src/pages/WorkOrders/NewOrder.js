@@ -189,15 +189,6 @@ function NewOrderDialog(props) {
                     fullWidth
                   />
                 </Box>
-                <Box sx={{ width: "45%" }}>
-                  <Typography>Location ID</Typography>
-                  <TextField
-                    sx={{ mt: 1 }}
-                    variant="outlined"
-                    size="small"
-                    fullWidth
-                  />
-                </Box>
               </TabItem>
               <TabItem>
                 <Box sx={{ width: "100%" }}>

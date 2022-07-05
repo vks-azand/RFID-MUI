@@ -41,7 +41,7 @@ function CantStart(props) {
           }}
         >
           <Typography sx={{ textAlign: "center", width: "85%" }}>
-            The next operation does not match the Work Center of this terminal
+            The next operation does not match the Work Center of this terminal.
           </Typography>
         </Box>
         <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
